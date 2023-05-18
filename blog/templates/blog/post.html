@@ -1,0 +1,36 @@
+{% extends "pages/base.html" %}
+{% comment %} gọi khung base {% endcomment %}
+
+{% block title %}{{ post.title }} {% endblock %}
+{% block content %}
+<h3><a href="{% url 'post' post.id %}">{{post.title}}</a></h3>
+<h6>on {{post.date}}</h6>
+{% if post.image %}
+<img src="{{post.image.url}}" height="200px">
+{% else %}
+<p></p>
+{% endif %}
+{{post.body|safe|linebreaks}}
+<!-- safe dùng để thêm tag html vào văn bản thì nó vẫn hiểu -->
+<!-- linebreaks giúp ta tự thêm thẻ br trong html -->
+
+{% for comment in post.comments.all %}
+<h4><strong>{{comment.author}}</strong></h4>
+<h6>
+    <p>{{comment.date}}</p>
+</h6>
+<p>{{comment.body|safe|linebreaks}}</p>
+{% endfor %}
+
+<!--  nếu có user đăng nhập thì mới hiện ra form, không thì thôi-->
+{% if user.username %}
+<form action="{% url 'post' post.id %}" method="POST">
+    {% csrf_token %}
+    <p><label for="">Comment: </label></p>
+    {{form.body}}
+    <br>
+    <input type="submit" value="Comment">
+</form>
+{% endif %}
+
+{% endblock %}
