@@ -1,13 +1,8 @@
 
 <a name="readme-top"></a>
 
-<!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/nhungpt194814/PythonWebGR1">
-    <img src="../media/django_logo.jpg" alt="Logo" width="80" height="80">
-  </a>
-
   <h3 align="center">Python Web</h3>
 </div>
 
@@ -84,6 +79,7 @@
 ## Contact
 
 Anh Nhung - [@GitHub](https://github.com/nhungpt194814) - nhung.pt194814@gmail.com
+
 Project Link: [https://github.com/nhungpt194814/PythonWebGR1](https://github.com/nhungpt194814/PythonWebGR1)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
