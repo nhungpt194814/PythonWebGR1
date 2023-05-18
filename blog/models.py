@@ -8,7 +8,6 @@ class Post(models.Model):
     body = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
     # auto add date time
-
     image = models.ImageField(null=True)
     # upload image
 
