@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from .forms import RegistrationForm
+from django.views.generic import ListView
+from django.contrib.auth.models import User
 # Create your views here.
 
 
@@ -32,3 +34,15 @@ def register(request):
 
     # nếu method là GET thì hiển thị form
     return render(request, 'pages/register.html', {'form': form})
+
+
+def user_list(request):
+    return render(request, 'pages/user_list.html')
+
+
+class UserListView(ListView):
+    # order blog posts by date
+    queryset = User.objects.all()
+    template_name = 'pages/user_list.html'
+    context_object_name = 'Users'
+    paginate_by = 10  # maximum per page is 1 blog posts

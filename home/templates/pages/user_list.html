@@ -1,0 +1,11 @@
+{% extends "pages/base.html" %}
+{% comment %} gọi khung base {% endcomment %}
+
+{% block title %} User list{% endblock %}
+{% block content %}
+{% for user in Users %}
+<h6>{{user.username}}</h6>
+<h6>{{user.email}}</h6>
+
+{% endfor %}
+{% endblock %}

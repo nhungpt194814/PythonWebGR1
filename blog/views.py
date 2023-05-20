@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404
-from blog.models import Post, Comment
+from blog.models import Post
 from blog.forms import CommmentForm
 from django.http import HttpResponseRedirect
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView
 # generic views giúp tối ưu code
 
 # Create your views here.
