@@ -14,7 +14,7 @@
     <li>
       <a href="#About-Django">About Django</a>
       <ul>
-        <li><a href="#Django-la-gi?">Django là gì?</a></li>
+        <li><a href="#Django-la-gi">Django là gì?</a></li>
         <li><a href="#Lịch-sử-của-Django ">Lịch sử của Django</a></li>
         <li><a href="#Tại-sao-nên-dùng-Django?">Tại sao nên dùng Django?</a></li>
         <li><a href="#Ưu-điểm-của-Django">Ưu điểm của Django</a></li>
