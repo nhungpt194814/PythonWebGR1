@@ -12,13 +12,13 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About Django</a>
+      <a href="#About-Django">About Django</a>
       <ul>
-        <li><a href="#built-with">Django là gì?</a></li>
-        <li><a href="#built-with">Lịch sử của Django</a></li>
-        <li><a href="#built-with">Tại sao nên dùng Django?</a></li>
-        <li><a href="#built-with">Ưu điểm của Django</a></li>
-        <li><a href="#built-with">Nhược điểm của Django</a></li>
+        <li><a href="#Django-la-gi">Django là gì?</a></li>
+        <li><a href="#Lịch-sử-của-Django ">Lịch sử của Django</a></li>
+        <li><a href="#Tại-sao-nên-dùng-Django?">Tại sao nên dùng Django?</a></li>
+        <li><a href="#Ưu-điểm-của-Django">Ưu điểm của Django</a></li>
+        <li><a href="#Nhược-điểm-của-Django">Nhược điểm của Django</a></li>
       </ul>
     </li>
     <li>
@@ -35,7 +35,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About Django
-### Django là gì?
+### Django la gi
 * Django là một web framework bậc cao, miễn phí, sử dụng mã nguồn mở 
 * Lập trình bằng ngôn ngữ python 
 
@@ -73,7 +73,8 @@
 ## Getting Started
 
 ### Installation
-
+How to install and set up on WSL
+1. Install django and gunicorn with `pip install gunicorn django`
 
 <!-- CONTACT -->
 ## Contact
