@@ -35,7 +35,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About Django
-### Django là gì?
+### Django la gi
 * Django là một web framework bậc cao, miễn phí, sử dụng mã nguồn mở 
 * Lập trình bằng ngôn ngữ python 
 
@@ -73,7 +73,8 @@
 ## Getting Started
 
 ### Installation
-
+How to install and set up on WSL
+1. Install django and gunicorn with `pip install gunicorn django`
 
 <!-- CONTACT -->
 ## Contact
