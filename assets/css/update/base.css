@@ -1,0 +1,15 @@
+:root {
+    --primary-color: #cdecf7;
+    --navbar-color:#2793ba;
+    --sidebar-color:#034157;
+  }
+  
+  .update-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .row:last-child {
+    flex-grow: 1; /* Div đầu tiên co dãn để chiếm phần còn lại */
+  }
+  
