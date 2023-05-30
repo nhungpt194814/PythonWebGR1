@@ -27,7 +27,9 @@ urlpatterns = [
     # sau khi vào home.urls, nó dẽ đưa mình đến đường dẫn '' đầu tiên
     # nó sẽ gọi views.index
     # sau đó nó sẽ chạy hàm index và return respone
-    path('blog/', include('blog.urls'))
+    path('blog/', include('blog.urls')),
+    path('ManageUser/', include('ManageUser.urls')),
+
 ]
 
 if settings.DEBUG:

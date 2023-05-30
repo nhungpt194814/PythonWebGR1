@@ -63,11 +63,34 @@
 
 ### Nhược điểm của Django: 
 
-* Framework có nhiều tính năng mạnh, không cần thiết để sử dụng cho các ứng dụng nhỏ 
-* Khả năng tùy chỉnh hạn chế  
-* Không hiệu quả khi xử lý các ứng dụng web có lưu lượng truy cập lớn, tốc độ xử lý cao 
+* Framework có nhiều tính năng mạnh, không cần thiết để sử dụng cho các ứng dụng nhỏ
+* Khả năng tùy chỉnh hạn chế
+* Không hiệu quả khi xử lý các ứng dụng web có lưu lượng truy cập lớn, tốc độ xử lý cao
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Structure of a Django application
+The structure of a typical Django application consists of the following components:
+
+* `models.py`: Nơi định nghĩa các models cho ứng dụng. Models mô tả cấu trúc dữ liệu của các đối tượng trong ứng dụng và được sử dụng để tương tác với cơ sở dữ liệu.
+* `views.py`: Nơi chứa các hàm hoặc các lớp để xử lý yêu cầu từ người dùng và trả về các phản hồi tương ứng.
+* `urls.py`: Nơi chứa các mẫu URL (url patterns) cho ứng dụng. Mỗi url pattern định nghĩa đường dẫn và liên kết nó với một hàm xử lý yêu cầu trong `views.py`.
+* `forms.py` (tùy chọn): Nơi định nghĩa các form để xử lý dữ liệu người dùng. Form giúp xác thực và xử lý dữ liệu nhập vào từ người dùng trước khi lưu vào cơ sở dữ liệu.
+* `templates`: Thư mục chứa các mẫu templates cho giao diện người dùng
+* `static`: Thư mục để lưu trữ các tệp tĩnh(static) như CSS, JavaScript hoặc hình ảnh. Các tệp tĩnh này có thể được sử dụng trong giao diện người dùng.
+
+## MVC architecture in Django
+Django sử dụng mô hình kiến trúc MVC(Model-View-Controller) trong việc phát triển ứng dụng web. Tuy nhiên, Django đặt tên các thành phần theo cấu trúc MVT(Model-View-Template).
+1. Model:
+* Model trong Django đại diện cho cấu trúc dữ liệu của ứng dụng, dùng để mô tả các đối tượng và mối quan hệ giữa chúng. Model định nghĩa các trường và các phương thức để tương tác với cơ sở dữ liệu.
+* `models.py` chứa các lớp mô hình. Mỗi lớp đại diện cho một bảng trong cơ sở dữ liệu và sử dụng các trường để định nghĩa cấu trúc dữ liệu.
+
+2. View:
+* Trong Django, view là nơi xử lý logic và tương tác với model và yêu cầu từ người dùng(thay thế Controller). View không chỉ dùng để trình diễn dữ liệu mà còn có thể xử lý yêu cầu HTTP và trả về phản hồi tương tự.
+* `views.py` chứa các hàm hoặc các lớp, nó nhận yêu cầu từ người dùng, tương tác với cơ sở dữ liệu và trả về phản hồi.
+
+3. Template:
+* Template dùng để định nghĩa giao diện người dùng, dùng để hiển thị dữ liệu từ models và các phản hồi từ view.
 
 <!-- GETTING STARTED -->
 ## Getting Started

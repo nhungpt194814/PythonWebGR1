@@ -3,7 +3,7 @@ from blog.models import Post
 from blog.forms import CommmentForm
 from django.http import HttpResponseRedirect
 from django.views.generic import ListView
-# generic views giúp tối ưu code
+# generic views helps optimize your code
 
 # Create your views here.
 

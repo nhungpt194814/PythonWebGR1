@@ -41,7 +41,6 @@ def user_list(request):
 
 
 class UserListView(ListView):
-    # order blog posts by date
     queryset = User.objects.all()
     template_name = 'pages/user_list.html'
     context_object_name = 'Users'

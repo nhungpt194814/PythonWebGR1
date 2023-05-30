@@ -11,6 +11,7 @@ class RegistrationForm(forms.Form):
     # widget dùng để che đi mật khẩu khi nhập
     password2 = forms.CharField(
         label='Password Again', widget=forms.PasswordInput())
+    address = forms.CharField(label='Address')
 
     def clean_password2(self):
         if 'password1' in self.cleaned_data:
@@ -35,4 +36,4 @@ class RegistrationForm(forms.Form):
     # hàm tạo tài khoản
     def save(self):
         User.objects.create_user(
-            username=self.cleaned_data['username'], email=self.cleaned_data['email'], password=self.cleaned_data['password1'])
+            username=self.cleaned_data['username'], email=self.cleaned_data['email'], password=self.cleaned_data['password1'], address=self.cleaned_data['address'])
