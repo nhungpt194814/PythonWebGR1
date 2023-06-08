@@ -1,16 +1,14 @@
-from django.contrib import admin
-
 # Register your models here.
 from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
-from django.contrib.auth.models import User
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from .models import User
 
 
-class CustomUserAdmin(UserAdmin):
-    list_display = ['username', 'email', 'first_name', 'last_name']
-    search_fields = ['username', 'email']
-    list_filter = ['username']
+class UserAdmin(BaseUserAdmin):
+    list_display = ['email', 'first_name', 'last_name', 'mobile', 'is_staff']
+    search_fields = ['first_name', 'email']
+    ordering = ['first_name']
 
 
-admin.site.unregister(User)
-admin.site.register(User, CustomUserAdmin)
+admin.site.register(User, UserAdmin)
+# admin.site.register(User, CustomUserAdmin)

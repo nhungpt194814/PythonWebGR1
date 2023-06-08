@@ -28,8 +28,6 @@ urlpatterns = [
     # nó sẽ gọi views.index
     # sau đó nó sẽ chạy hàm index và return respone
     path('blog/', include('blog.urls')),
-    path('ManageUser/', include('ManageUser.urls')),
-
 ]
 
 if settings.DEBUG:

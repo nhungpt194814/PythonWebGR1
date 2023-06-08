@@ -23,7 +23,7 @@
 {% endfor %}
 
 <!--  nếu có user đăng nhập thì mới hiện ra form, không thì thôi-->
-{% if user.username %}
+{% if user.email %}
 <form action="{% url 'post' post.id %}" method="POST">
     {% csrf_token %}
     <p><label for="">Comment: </label></p>

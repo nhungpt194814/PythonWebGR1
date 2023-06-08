@@ -37,10 +37,12 @@
         <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
         <!-- csrf_token dùng để bảo mật thông tin -->
         {% csrf_token %}
-        <p><label for="">Username:</label>{{ form.username }}</p>
+        <p><label for="">First name:</label>{{ form.first_name }}</p>
+        <p><label for="">Last name:</label>{{ form.last_name }}</p>
         <p><label for="">Email:</label>{{ form.email }}</p>
         <p><label for="">Password:</label>{{ form.password1 }}</p>
         <p><label for="">Password again:</label>{{ form.password2 }}</p>
+        <p><label for="">Mobile:</label>{{ form.mobile }}</p>
         <p><label for="">Address:</label>{{ form.address }}</p>
 
         <input type="hidden" name="next" value="/">
