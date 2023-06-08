@@ -6,16 +6,17 @@ from django.conf import settings
 class Post(models.Model):
     title = models.CharField(max_length=100)
     body = models.TextField()
+    author = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
     # auto add date time
     image = models.ImageField(null=True)
     # upload image
 
-# python3 manage.py makemigrations blog
-# python3 manage.py migrate : update date into sql database
-
     def __str__(self):
         return self.title
+# python3 manage.py makemigrations blog
+# python3 manage.py migrate : update date into sql database
 
 
 class Comment(models.Model):

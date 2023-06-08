@@ -5,7 +5,7 @@ from .models import User
 
 
 class UserAdmin(BaseUserAdmin):
-    list_display = ['email', 'first_name', 'last_name', 'mobile', 'is_staff']
+    list_display = ['email', 'first_name', 'last_name', 'address', 'is_staff']
     search_fields = ['first_name', 'email']
     ordering = ['first_name']
 

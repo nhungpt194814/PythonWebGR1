@@ -2,7 +2,14 @@
 {% comment %} gọi khung base {% endcomment %}
 
 {% block title %} Home of Nhung{% endblock %}
+{% block page_name %} Contact {% endblock %}
+
 {% block content %}
-<p>Email: </p>
-<p>Number: </p>
+{% if user.email %}
+<p>Hello {{user.first_name}}</p>
+<p>Email: {{user.email}}</p>
+<p>Address: {{user.address}}</p>
+{% else %}
+<p>You need to log in to see your information.</p>
+{% endif %}
 {% endblock %}

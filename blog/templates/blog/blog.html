@@ -1,8 +1,21 @@
 {% extends "pages/base.html" %}
 {% comment %} gọi khung base {% endcomment %}
-
 {% block title %} Blog {% endblock %}
+
 {% block content %}
+
+{% if user.email %}
+<form action="{% url '/' %}" method="POST">
+    {% csrf_token %}
+    <p><label for="">New Post: </label></p>
+    {{form.title}}
+    {{form.body}}
+    {{form.image}}
+    <br>
+    <input type="submit" value="Post">
+</form>
+{% endif %}
+
 {% for post in Posts %}
 <h4>{{post.date|date:"d-m-Y"}}
     <a href="/blog/{{post.id}}">{{post.title}}</a>
@@ -13,6 +26,7 @@
 <p></p>
 {% endif %}
 {% endfor %}
+
 <br>
 {% if page_obj.has_next %}
 <!-- nếu vẫn còn tiếp  -->
