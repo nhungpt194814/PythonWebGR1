@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from blog.models import Post
 from blog.forms import CommmentForm, PostForm
 from django.http import HttpResponseRedirect
@@ -20,14 +20,24 @@ def post(request, pk):
     return render(request, 'blog/post.html', {'post': post, 'form': form})
 
 
-def blog_post(request):
-    new_post = PostForm()
-    if request.method == "POST":
-        new_post = PostForm(request.POST, author=request.user)
-        if new_post.is_valid():
-            new_post.save()
-            return HttpResponseRedirect(request.path)
-    return render(request, 'blog/post.html', {'post': post, 'form': new_post})
+def create_post(request):
+    if request.method == 'POST':
+        # Lấy thông tin từ yêu cầu POST
+        title = request.POST['title']
+        body = request.POST['body']
+        author = request.user
+        image = request.FILES.get('image')
+
+        # Tạo một bài viết mới
+        post = Post(title=title, body=body, author=author, image=image)
+
+        # Lưu bài viết vào cơ sở dữ liệu
+        post.save()
+
+        # Chuyển hướng người dùng tới trang khác (ví dụ: danh sách các bài viết)
+        return redirect('/blog')
+
+    return render(request, 'blog/create_post.html')
 
 
 class PostListView(ListView):

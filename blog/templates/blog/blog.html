@@ -5,15 +5,13 @@
 {% block content %}
 
 {% if user.email %}
-<form action="{% url '/' %}" method="POST">
+<form method="post" enctype="multipart/form-data">
     {% csrf_token %}
-    <p><label for="">New Post: </label></p>
-    {{form.title}}
-    {{form.body}}
-    {{form.image}}
-    <br>
-    <input type="submit" value="Post">
+    {{ form.as_p }}
+    <input type="hidden" name="id" value="{{ post.id }}">
+    <a href="{% url 'create_post' %}">Create</a>
 </form>
+
 {% endif %}
 
 {% for post in Posts %}
@@ -29,7 +27,6 @@
 
 <br>
 {% if page_obj.has_next %}
-<!-- nếu vẫn còn tiếp  -->
 <a href="{{request.path}}?page={{page_obj.next_page_number}}">Next</a>
 {% endif %}
 {% endblock %}
