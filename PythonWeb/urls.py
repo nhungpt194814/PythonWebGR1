@@ -19,6 +19,7 @@ from django.urls import path, include
 from django.conf.urls import handler404, handler500
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,6 +30,8 @@ urlpatterns = [
     # sau đó nó sẽ chạy hàm index và return respone
     path('blog/', include('blog.urls')),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,

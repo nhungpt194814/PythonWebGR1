@@ -5,6 +5,7 @@
 {% block content %}
 <h3><a href="{% url 'post' post.id %}">{{post.title}}</a></h3>
 <h6>on {{post.date}}</h6>
+<h6>author: {{post.author}}</h6>
 {% if post.image %}
 <img src="{{post.image.url}}" height="200px">
 {% else %}

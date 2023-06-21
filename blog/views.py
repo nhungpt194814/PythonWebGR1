@@ -47,7 +47,3 @@ class PostListView(ListView):
     context_object_name = 'Posts'
     paginate_by = 10  # maximum per page is 1 blog posts
 
-
-# class PostDetailView(DetailView):
-#     model = Post
-#     template_name = 'blog/post.html'
